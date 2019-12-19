@@ -1,0 +1,139 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace лаба_8_шарп
+{
+    class Program
+    {        
+        static void Main(string[] args)
+        {
+
+            //Задание 1 ---------------------------------------------
+
+            /*
+
+            int a, b;
+            Console.WriteLine("Введите А и В");
+            a = int.Parse(Console.ReadLine());
+            b = int.Parse(Console.ReadLine());
+            if (a < b) a = b;
+            else if (b < a) b = a;
+            else a = b = 0;
+            Console.WriteLine("А = " + a + ", B = " + b);
+            Console.ReadKey();
+
+            /**/
+
+            //Задание 2 ---------------------------------------------
+
+            /*
+
+            int a, b, c;
+            Console.WriteLine("Введите А, В и С");
+            a = int.Parse(Console.ReadLine());
+            b = int.Parse(Console.ReadLine());
+            c = int.Parse(Console.ReadLine());
+            if (a > b && c > b) Console.WriteLine("аы: " + (a + c));
+            else if (a > c && b > c) Console.WriteLine("аы: " + (a + b));
+            else Console.WriteLine("аы: " + (b + c));
+            Console.ReadKey();
+
+
+            /**/
+
+            //Задание 3 ---------------------------------------------
+
+            /*
+
+            double x1, x2, x3, y1, y2, y3, ab, ac;
+            Console.WriteLine("Введите А(х1; у1)");
+            x1 = int.Parse(Console.ReadLine());
+            y1 = int.Parse(Console.ReadLine());
+            Console.WriteLine("Введите В(х2; у2)");
+            x2 = int.Parse(Console.ReadLine());
+            y2 = int.Parse(Console.ReadLine());
+            Console.WriteLine("Введите С(х3; у3)");
+            x3 = int.Parse(Console.ReadLine());
+            y3 = int.Parse(Console.ReadLine());
+            ab = Math.Sqrt((x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1));
+            ac = Math.Sqrt((x3 - x1) * (x3 - x1) + (y3 - y1) * (y3 - y1));
+            if (ab < ac)  Console.WriteLine("Ближайшая точка B. Расстояние до A = " + ab);            
+            else if (ac < ab) Console.WriteLine("Ближайшая точка C. Расстояние до A = " + ac); 
+            else Console.WriteLine("Точки В и С равноудалены от А на " + ac); 
+            Console.ReadKey();
+           
+            /**/
+
+            //Задание 4 ---------------------------------------------
+
+            /*
+
+            int x,y;
+            Console.WriteLine("Введите точку А(x; y), не лежащуюю на осях:");
+            x = int.Parse(Console.ReadLine());
+            y = int.Parse(Console.ReadLine());
+            if (x > 0)
+            {
+                if (y > 0) Console.WriteLine("Первая четверть");
+                else Console.WriteLine("Четвертая четверть");
+            }
+            else
+            {
+                if (y > 0) Console.WriteLine("Вторая четверть");
+                else Console.WriteLine("Третья четверть");
+            }
+            Console.ReadKey();
+
+            /**/
+
+            //Задание 5 ---------------------------------------------
+
+            /*
+
+            int n;
+            Console.WriteLine("Введите число n - целое");
+            n = int.Parse(Console.ReadLine());
+            if (n > 0)
+            {
+                if (n % 2 == 0) Console.WriteLine("Четное положительное");
+                else Console.WriteLine("Нечетное положительное");
+            }
+            else if (n < 0)
+            {
+                if (n % 2 == 0) Console.WriteLine("Четное отрицательное");
+                else Console.WriteLine("Нечетное отрицательное");
+            }
+            else Console.WriteLine("Нулевое");
+            Console.ReadKey();
+
+            /**/
+
+            //Задание 6 ---------------------------------------------
+
+            /*
+
+            int n;
+            Console.WriteLine("Введите число n - целое от 1 до 999");
+            n = int.Parse(Console.ReadLine());
+            if (n % 2 == 0)
+            {
+                if (n >= 100 && n < 1000) Console.WriteLine("Четное трехзначное");
+                else if (n >= 10 && n < 100) Console.WriteLine("Четное двузначное");
+                else Console.WriteLine("Четное однозначное");
+            }
+            else
+            {
+                if (n >= 100 && n < 1000) Console.WriteLine("Нечетное трехзначное");
+                else if (n >= 10 && n < 100) Console.WriteLine("Нечетное двузначное");
+                else Console.WriteLine("Нечетное однозначное");
+            }
+            Console.ReadKey();
+
+            /**/
+
+        }
+    }
+}
