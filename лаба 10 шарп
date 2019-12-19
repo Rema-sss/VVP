@@ -1,0 +1,116 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace лаба_10_шарп
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //Задание 1 ----------------------------------------
+
+            /*
+             
+            double c, h;
+            Console.Write("Введите цену за 1 кг конфет: ");
+            c = double.Parse(Console.ReadLine());                       
+            for (int i = 1; i <= 10; i++)
+            {
+                h = c * (0.1*i);
+                Console.WriteLine("Стоимость за " + 0.1*i +" кг: " + h);
+            }
+            Console.ReadKey();
+
+            /**/
+
+            //Задание 2 ----------------------------------------
+
+            /*
+
+            int N;
+            double x,h;
+            Console.Write("Введите N>0: ");
+            N = int.Parse(Console.ReadLine());
+            if (N > 0)
+            {
+                h = 1;
+                for (double i = 1; i <= N; i++)
+                {
+                    x = (i / 10) + 1;
+                    h = h * x;
+                }
+                Console.WriteLine("Произведение равно: " + h);
+            }
+            else Console.WriteLine("Введите норм значения!");            
+            Console.ReadKey();
+
+            /**/
+
+            //Задание 3 ----------------------------------------
+
+            /*
+
+            int N;
+            double x, h;
+            Console.Write("Введите N>0: ");
+            N = int.Parse(Console.ReadLine());
+            if (N > 0)
+            {
+                x = 0;
+                for (int i = 1;i<=(2*N - 1); i=i+2)
+                {
+                    x = x + i;
+                    Console.Write(x + " ");
+                }
+                Console.WriteLine("");
+                Console.WriteLine("Квадрат " + N + " равен: " + x);
+            }
+            else Console.WriteLine("Введите норм значения!");            
+            Console.ReadKey();
+
+            /**/
+
+            //Задание 4 ----------------------------------------
+
+            /*
+
+            double A;
+            int N;            
+            Console.WriteLine("Введите A и N: ");
+            A = double.Parse(Console.ReadLine());
+            N = int.Parse(Console.ReadLine());
+            if (N > 0)
+            {
+                double x = 0;
+                for (int i = 0; i <= N; i++)
+                {                    
+                    x = x + (Math.Pow(A, i));
+                }
+                Console.WriteLine("Сумма: " + x);
+            }
+            else Console.WriteLine("Введите норм значения!");            
+            Console.ReadKey();
+
+            /**/
+
+            //Задание 5 -----------------------------------------
+
+            //*
+
+            double A;
+            int N;
+            Console.WriteLine("Введите A и N: ");
+            A = double.Parse(Console.ReadLine());
+            N = int.Parse(Console.ReadLine());
+            double x = 0;
+            for (int i = 0; i <= N; i++) x = x + (Math.Pow(-1,i)*(Math.Pow(A, i)));
+            Console.WriteLine("Сумма: " + x);
+            Console.ReadKey();
+
+            /**/
+        }
+    }
+}
