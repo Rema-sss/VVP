@@ -1,0 +1,129 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.IO;
+
+namespace лаба_21_шарп
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("Введите номер задания: ");
+            int z = int.Parse(Console.ReadLine());
+            if (z == 1) Dva1Od();
+            else if (z == 2) Dva1Dva();
+            else if (z == 3) Dva1Tri();
+            else if (z == 4) Dva1Che();
+            else if (z == 5) Dva1Py();
+            else if (z == 6) Dva1She();
+            else if (z == 7) Dva1Sem();
+            else Console.WriteLine("Введите число от 1 до 7!");
+            Console.ReadKey();
+        }
+        /// <summary>
+        /// ///////////////////////////////////////
+        /// </summary>
+        static void Dva1Od()
+        {
+            char[] s;
+            Console.Write("Введите строку: ");
+            s = Console.ReadLine().ToCharArray();
+            int k = 1;
+            for (int i = 0; i < s.Length; i++)
+            {
+                if ((s[i] == ' ') && (s[i - 1] != ' '))
+                {
+                    k++;
+                }
+            }
+            Console.Write(k);
+        }
+        static void Dva1Dva()
+        {
+            string s;
+            Console.Write("Введите строку: ");
+            s = Console.ReadLine();
+            string minword = (from min in s.Split(' ')
+                              orderby min.Length
+                              select min).First();
+            Console.Write(minword.Length);
+        }
+        static void Dva1Tri()
+        {
+            char[] s;
+            char c;
+            Console.Write("Введите строку: ");
+            s = Console.ReadLine().ToArray();
+            c = s[0];
+            for (int i = 1; i < s.Length; i++)
+            {
+                if (s[i] == c)
+                {
+                    s[i] = '.';
+                }
+            }
+            Console.Write(s);
+        }
+        static void Dva1Che()
+        {
+            string s;
+            char[] glas = { 'А', 'а', 'Е', 'е', 'Ё', 'ё', 'И', 'и', 'О', 'о', 'У', 'у', 'ы', 'Э', 'э', 'Ю', 'ю', 'Я', 'я' };
+            Console.Write("Введите строку: ");
+            s = Console.ReadLine();
+            int k = 0;
+            for (int i = 0; i < s.Length; i++)
+            {
+                for (int j = 0; j < glas.Length; j++)
+                {
+                    if (s[i] == glas[j])
+                    {
+                        k++;
+                    }
+                }
+            }
+            Console.Write(k);
+        }
+        static void Dva1Py()
+        {
+            string FullPath;
+            Console.Write("Введите полный путь к файлу: ");
+            FullPath = Console.ReadLine();
+            Console.Write(Path.GetFileNameWithoutExtension(FullPath));
+            Console.ReadKey();
+        }
+        static void Dva1She()
+        {
+            string FullPath;
+            Console.Write("Введите полный путь к файлу: ");
+            FullPath = Console.ReadLine();
+            if ((char)(FullPath.Split('\\').Length) > 2)
+            {
+                Console.WriteLine(FullPath.Split('\\')[FullPath.Split('\\').Length - 2]);
+            }
+            else Console.WriteLine("\\ ");
+        }
+        static void Dva1Sem()
+        {
+            string s;
+            Console.Write("Введите строку: ");
+            s = Console.ReadLine();
+            for (int i = 0; i < s.Length; i++)
+            {
+                if (i % 2 != 0)
+                {
+                    Console.Write(s[i]);
+                }
+            }
+            for (int i = s.Length - 1; i >= 0; i--)
+            {
+                if (i % 2 == 0)
+                {
+                    Console.Write(s[i]);
+                }
+            }
+        }
+    }
+}
