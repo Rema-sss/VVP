@@ -1,0 +1,224 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace лаба_15_шарп
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("Введите номер задания: ");
+            int z = int.Parse(Console.ReadLine());
+            if (z == 1) PyOd();
+            else if (z == 2) PyDva();
+            else if (z == 3) PyTri();
+            else if (z == 4) PyChe();
+            else if (z == 5) PyPy();
+            else Console.WriteLine("Введите число от 1 до 5!");
+            Console.ReadKey();
+        }
+        //-----------------------------------------------------------------------------------------------------
+        static void PyOd()
+        {
+            int n, tmp;
+            Console.Write("Введите N: ");
+            n = int.Parse(Console.ReadLine());
+            int[] A = new int[n];
+            int[] B = new int[n];
+            Random rnd = new Random();
+            Console.Write("old Массив A: ");
+            for (int i = 0; i < n; i++)
+            {
+                A[i] = rnd.Next(-100, 100);
+                Console.Write(A[i] + " ");
+            }
+            Console.WriteLine(" ");
+            Console.Write("old Массив В: ");
+            for (int i = 0; i < n; i++)
+            {
+                B[i] = rnd.Next(-100, 100);
+                Console.Write(B[i] + " ");
+            }
+            for (int i = 0; i < n; i++)
+            {
+                tmp = A[i];
+                A[i] = B[i];
+                B[i] = tmp;
+            }
+            Console.WriteLine(" ");
+            Console.Write("new Массив A: ");
+            for (int i = 0; i < n; i++)
+            {
+                Console.Write(A[i] + " ");
+            }
+            Console.WriteLine(" ");
+            Console.Write("new Массив В: ");
+            for (int i = 0; i < n; i++)
+            {
+                Console.Write(B[i] + " ");
+            }
+            Console.ReadKey();
+        }
+        //----------------------------------------------------------------------------------------------------------
+        static void PyDva()
+        {
+            Console.Write("Введите N: ");
+            int n = int.Parse(Console.ReadLine());
+            int[] A = new int[n];
+            float[] B = new float[n];
+            float sr = 0;
+            Random rnd = new Random();
+            Console.Write("Массив A: ");
+            for (int i = 0; i < n; i++)
+            {
+                A[i] = rnd.Next(-100, 100);
+                Console.Write(A[i] + " ");
+            }
+            int j;
+            Console.WriteLine(" ");
+            Console.Write("new Массив В: ");
+            for (int i = 0;i < n; i++)
+            {
+                for(j = 0;j <= i; j++)
+                {
+                    sr += A[j];
+                }
+                sr /= j;                
+                B[i] = sr;
+                sr = 0;
+            }
+            for (int i = 0; i < n; i++)
+            {                
+                Console.Write(B[i] + " ");
+            }
+            Console.ReadKey();
+        }
+        //---------------------------------------------------------------------------------------------------------------
+        static void PyTri()
+        {
+            Console.Write("Введите N: ");
+            int n = int.Parse(Console.ReadLine());
+            int[] A = new int[n];
+            Random rnd = new Random();
+            Console.Write("old Массив A: ");
+            for (int i = 0; i < n; i++)
+            {
+                A[i] = rnd.Next(-100, 100);
+                Console.Write(A[i] + " ");
+            }
+            int ne4 = 0;
+            for (int i = 0; i < n; i++)
+            {
+                if (A[i] % 2 != 0) ne4 = A[i];
+            }
+            if (ne4 != 0)
+            {
+                for (int i = 0; i < n; i++)
+                {
+                    if (A[i] % 2 != 0) A[i] += ne4;
+                }
+            }
+            Console.WriteLine(" ");
+            Console.Write("new Массив A: ");
+            for (int i = 0; i < n; i++)
+            {               
+                Console.Write(A[i] + " ");
+            }
+
+            Console.ReadKey();
+        }
+        //----------------------------------------------------------------------------------------------------------------
+        static void PyChe()
+        {
+            Console.Write("Введите N: ");
+            int n = int.Parse(Console.ReadLine());
+            int max, min, tmpmax, tmpmin;
+            int[] A = new int[n];
+            Random rnd = new Random();
+            Console.Write("old Массив A: ");
+            for (int i = 0; i < n; i++)
+            {
+                A[i] = rnd.Next(-100, 100);
+                Console.Write(A[i] + " ");
+            }
+            tmpmin = tmpmax = 0;
+            max = min = A[0];
+            for (int i = 0; i < n; i++)
+            {
+                if (max < A[i])
+                {
+                    max = A[i];
+                    tmpmax = i;
+                }                
+            }
+            for (int i = 0; i < n; i++)
+            {
+                if (min > A[i])
+                {
+                    min = A[i];
+                    tmpmin = i;
+                }
+            }
+            if (tmpmin < tmpmax)
+            {
+                for (int i = tmpmin+1;i < tmpmax; i++)
+                {
+                    A[i] = 0;
+                }
+            }
+            else if (tmpmax < tmpmin)
+            {
+                for (int i = tmpmax + 1; i < tmpmin; i++)
+                {
+                    A[i] = 0;
+                }
+            }
+            Console.WriteLine(" ");
+            Console.Write("new Массив A: ");
+            for (int i = 0; i < n; i++)
+            {
+                Console.Write(A[i] + " ");
+            }
+            Console.ReadKey();
+        }
+        //----------------------------------------------------------------------------------------------------------------
+        static void PyPy()
+        {
+            Console.Write("Введите N: ");
+            int n = int.Parse(Console.ReadLine());            
+            int[] A = new int[n];
+            int tmp = 0;
+            Console.WriteLine("Введите N чисел: ");
+            for (int i = 0; i < n; i++)
+            {
+                A[i] = int.Parse(Console.ReadLine());
+            }
+            Console.Write("old Массив A: ");
+            for (int i = 0; i < n; i++)
+            {
+                Console.Write(A[i] + " ");
+            }
+            int shur = A[0];
+            for (int i = 1; i < n; i++)
+            {                
+                if (shur > A[i])
+                {
+                    tmp = A[i];
+                    A[i] = shur;
+                    A[i-1] = tmp;
+                }               
+            }
+            Console.WriteLine(" ");
+            Console.Write("new Массив A: ");
+            for (int i = 0; i < n; i++)
+            {
+                Console.Write(A[i] + " ");
+            }
+            Console.ReadKey();
+        }
+
+    }
+}
