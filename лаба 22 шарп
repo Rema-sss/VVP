@@ -1,0 +1,88 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.IO;
+using System.Text.RegularExpressions;
+
+namespace НАКОНЕЦ_ТО__22_ШАРП
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("Введите номер задания: ");
+            int z = int.Parse(Console.ReadLine());
+            if (z == 1) VzlomPentagonaNomerOdin();
+            else if (z == 2) VzlomPentagonaNomerDva();
+            else if (z == 3) VzlomPentagonaNomerTri();
+            else if (z == 4) VzlomPentagonaNomerChetire();
+            else if (z == 5) VzlomPentagonaNomerPyat();            
+            else Console.WriteLine("Введите число от 1 до 7!");
+            Console.ReadKey();
+        }
+        /// <summary>
+        /// ///////////////////////////////////////
+        /// </summary>
+        static void VzlomPentagonaNomerOdin()
+        {
+            string path = @"C:\Users\Ultramarinad\OneDrive\Документы\C#.txt";
+            string text = File.ReadAllText(path);
+            text = text.Remove(0, text.IndexOf(' ') + 1);
+            File.WriteAllText(path, text);
+        }
+        static void VzlomPentagonaNomerDva()
+        {
+            string path = @"C:\Users\Ultramarinad\OneDrive\Документы\C#.txt";
+            string text = File.ReadAllText(path);
+            Console.Write("Введите число K(кол-во звезд): ");
+            int k = int.Parse(Console.ReadLine());
+            Console.Write("Введите число N(строк): ");
+            int n = int.Parse(Console.ReadLine());
+
+            for (int i = 0; i < n; i++)
+            {
+                for (int j = 0; j < k; j++)
+                {
+                    File.AppendAllText(path, string.Join(path, " * "));
+                }
+                File.AppendAllText(path, Environment.NewLine);
+            }
+        }
+        static void VzlomPentagonaNomerTri()
+        {
+            string path1 = @"C:\Users\Ultramarinad\OneDrive\Документы\C#.txt";
+            string path2 = @"C:\Users\Ultramarinad\OneDrive\Документы\C#2.txt";
+            string text = File.ReadAllText(path1);
+            File.WriteAllText(path1, File.ReadAllText(path2) + text);
+
+        }
+        static void VzlomPentagonaNomerChetire()
+        {
+            string path = @"C:\Users\Ultramarinad\OneDrive\Документы\C#.txt";
+            string text = File.ReadAllText(path);
+            File.Delete(path);
+            while (text.Contains("  "))
+            {
+                text = text.Replace("  ", " ");
+            }
+            File.AppendAllText(path, text);
+
+        }
+        static void VzlomPentagonaNomerPyat()
+        {
+            string path = @"C:\Users\Ultramarinad\OneDrive\Документы\C#2.txt";
+            string text = File.ReadAllText(path);
+            string pattern = @"     ";
+            int k = 0;
+            Regex space = new Regex(pattern);
+            MatchCollection matches = space.Matches(text);
+            foreach (Match mat in matches)
+            {
+                k++;
+            }
+            Console.Write(k);
+        }
+    }
+}
