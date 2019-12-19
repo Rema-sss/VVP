@@ -1,0 +1,172 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace лаба_14_шарп
+{
+    class Program
+    {
+        //выбор номера
+        static void Main(string[] args)
+        {
+            Console.Write("Введите номер задания: ");
+            int z = int.Parse(Console.ReadLine());
+            if (z == 1) CheOd();
+            else if (z == 2) CheDva();
+            else if (z == 3) CheTri();
+            else if (z == 4) CheChe();
+            else if (z == 5) ChePy();
+            else Console.WriteLine("Введите число от 1 до 5!");
+            Console.ReadKey();
+        }
+        //первый - среднее арифм от К до Л
+        static void CheOd()
+        {
+            int n, k, l;
+            double sr;
+            Console.Write("Введите N: ");
+            n = int.Parse(Console.ReadLine());
+            double[] a = new double[n + 1];
+            Random rnd = new Random();
+            for (int i = 1; i <= n; i++)
+            {
+                a[i] = rnd.Next(-10, 10);
+                Console.Write(a[i] + " ");
+            }
+            Console.WriteLine(" ");
+            Console.Write("Введите K<=L: ");
+            k = int.Parse(Console.ReadLine());
+            Console.Write("Введите L<=N: ");
+            l = int.Parse(Console.ReadLine());
+            sr = 0;
+            for (int i = k; i <= l; i++)
+            {
+                sr = sr + a[i];
+            }
+            sr = sr / 2;
+            Console.WriteLine("Среднее арифмитическое: " + sr);
+            Console.ReadKey();
+        }
+        //второй - проверка арифм прогрессии (2 режима)
+        static void CheDva()
+        {
+            int n, k, l;
+            Console.Write("Режим(1 - ранд, 2 - ручной ввод): ");
+            k = int.Parse(Console.ReadLine());
+            if (k == 1)
+            {                
+                Console.Write("Введите N>=3: ");
+                n = int.Parse(Console.ReadLine());
+                int[] a = new int[n];
+                l = 0;
+                Random rnd = new Random();
+                for (int i = 0; i < n; i++)
+                {
+                    a[i] = rnd.Next(-100, 100);
+                    Console.Write(a[i] + " ");
+                }                
+                for (int i = 0; i < n - 2; i++)
+                {
+                    if (a[i] - a[i + 1] == a[i + 1] - a[i + 2] || n == 2)
+                    {
+                        l = a[i + 1] - a[i];
+                    }                    
+                }
+                Console.WriteLine(" ");
+                Console.WriteLine("Ответ: " + l);                
+            }
+            if (k == 2)
+            {
+                Console.Write("Введите N>=3: ");
+                n = int.Parse(Console.ReadLine());
+                int[] a = new int[n];
+                l = 0;
+                Console.WriteLine("Введите n чисел: ");
+                for (int i = 0; i < n; i++)
+                {
+                    a[i] = int.Parse(Console.ReadLine());                    
+                }
+                Console.Write("Массив: ");
+                for (int i = 0; i < n; i++)
+                {
+                    Console.Write(a[i] + " ");
+                }
+                for (int i = 0; i < n-2; i++)
+                {
+                    if (a[i] - a[i + 1] == a[i + 1] - a[i + 2] || n == 2)
+                    {
+                        l = a[i + 1] - a[i];
+                    }                   
+                }
+                Console.WriteLine(" ");
+                Console.WriteLine("Ответ: " + l);
+            }
+            Console.ReadKey();
+        }
+        //третий - минимальный четный элемент
+        static void CheTri()
+        {
+            int n, min;            
+            Console.Write("Введите N: ");
+            n = int.Parse(Console.ReadLine());
+            int[] a = new int[n];
+            Random rnd = new Random();
+            for (int i = 0; i < n; i++)
+            {
+                a[i] = rnd.Next(-100, 100);
+                Console.Write(a[i] + " ");
+            }
+            min = 99999999;
+            for (int i = 2; i < n; i+=2)
+            {
+                if (a[i] <= min) min = a[i];
+            }
+            Console.Write("Минимальный четный элемент: " + min);
+            Console.ReadKey();
+        }
+        //четвертый - локальный максимум из соседей
+        static void CheChe()
+        {
+            Console.Write("Введите N: ");
+            int n = int.Parse(Console.ReadLine());
+            int[] a = new int[n];
+            Random rnd = new Random();
+            for (int i = 0; i < n; i++)
+            {
+                a[i] = rnd.Next(-100, 100);
+                Console.Write(a[i] + " ");
+            }
+            int max = -1;
+            for (int i = 1; i < n - 1; i++)
+            {
+                if ((a[i] > a[i - 1]) && (a[i] > a[i + 1])) max = i + 1;
+            }
+            if (max != -1)
+            {
+                Console.WriteLine(" ");
+                Console.WriteLine(max);
+            }
+            else Console.WriteLine("Таких чисел нет!");
+            Console.ReadKey();
+        }
+        //пятый - найти одинаковые (ууууу сложна)
+        static void ChePy()
+        {
+            Console.Write("Введите N: ");
+            int n = int.Parse(Console.ReadLine());
+            int[] a = new int[n];            
+            for (int i = 0; i < n; i++)
+                a[i] = int.Parse(Console.ReadLine());            
+            for (int i = 0; i < n; i++)            
+                Console.Write(a[i] + " ");
+            Console.WriteLine(" ");
+            for (int i = 0; i < n - 1; i++)
+                for (int j = i + 1; j < n; j++)
+                    if (a[i] == a[j])
+                        Console.WriteLine((i+1) + " " + (j+1));
+            Console.ReadKey();
+        }
+    }
+}
