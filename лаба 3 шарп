@@ -1,0 +1,126 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace лаба_3_шарп
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //Задание 1 ----------------------------------
+
+            /*
+             
+            float A, B, T;
+            Console.WriteLine("Введите 2 числа, чтобы произошел троллинг....: ");
+            A = float.Parse(Console.ReadLine());
+            B = float.Parse(Console.ReadLine());
+            Console.WriteLine("Сейчас А = " + A + ", а В = " + B + ". Сейчас произойдет тролленг");
+            Console.WriteLine("троллинг происходиться.......");
+            T = A;
+            A = B;
+            B = T;
+            Console.WriteLine("Теперь А = " + A + ", а В = " + B);
+            Console.ReadKey();
+
+            /**/
+
+            //Задание 2 --------------------------------------------------
+
+            /*
+
+              float A, B, C, T;
+              Console.WriteLine("Введите 3 числа, чтобы произошел троллинг....: ");
+              A = float.Parse(Console.ReadLine());
+              B = float.Parse(Console.ReadLine());
+              C = float.Parse(Console.ReadLine());
+              Console.WriteLine("Сейчас А = " + A + ", В = " + B + ", а С = " + C + ". Сейчас произойдет тролленг");
+              Console.WriteLine("троллинг происходиться.......");
+              T = B;
+              B = A;
+              A = C;
+              C = T;
+              Console.WriteLine("Теперь А = " + A + ", В = " + B + ", а C = " + C);
+              Console.ReadKey();
+
+              /* */
+
+            //Задание 3 ----------------------------------------------------
+
+            /*
+
+            float A, B, C, T;
+            Console.WriteLine("Введите 3 числа, чтобы произошел троллинг....: ");
+            A = float.Parse(Console.ReadLine());
+            B = float.Parse(Console.ReadLine());
+            C = float.Parse(Console.ReadLine());
+            Console.WriteLine("Сейчас А = " + A + ", В = " + B + ", а С = " + C + ". Сейчас произойдет тролленг");
+            Console.WriteLine("троллинг происходиться.......");
+            T = A;
+            A = B;
+            B = C;
+            C = T;
+            Console.WriteLine("Теперь А = " + A + ", В = " + B + ", а C = " + C);
+            Console.ReadKey();
+
+            /**/
+
+            //Задание 4 --------------------------------------------------------
+
+            /*
+              
+            float x, a, b;
+            Console.WriteLine("Уравнение y= 3x^6 - 6x^2 -7. Введите значение х: ");
+            x = float.Parse(Console.ReadLine());
+            Console.WriteLine("При х = " + x + ", путем нехитрых вычислений, можно понять, что у = " + (3*(Math.Pow(x, 6)) - 6*(Math.Pow(x, 2)) - 7));
+            Console.ReadKey();
+            
+            /**/
+
+            //Задание 5 ---------------------------------------------------
+
+            /*  
+
+            float x, a, b;
+            Console.WriteLine("Уравнение y = 4(x-3)^6 - 7(x-3)^3 + 2. Введите значение х: ");
+            x = float.Parse(Console.ReadLine());
+            Console.WriteLine("При х = " + x + ", путем нехитрых вычислений, можно понять, что у = " + (4*Math.Pow((x-3), 6) - 7*Math.Pow((x-3), 3) + 2));
+            Console.ReadKey();
+
+            /* */
+
+            //Задание 6 ------------------------------------------------------
+
+            /*
+
+            float A, v;
+            Console.WriteLine("Введите А: ");
+            A = float.Parse(Console.ReadLine());
+            Console.WriteLine("Конечно, можно было посчитать А^8 с помощью одной формулы, тогда получилось бы " + Math.Pow(A, 8) + ", но.... Задание требует другого....");
+            v = A * A;
+            v = v * v;
+            Console.WriteLine("... поэтому, вот как бы да: А^8 = " + v*v);
+            Console.ReadKey();
+
+            /**/
+
+            //Задание 7 --------------------------------------------------------
+
+            /*
+
+            float A, v1, v2;
+            Console.Write("Выедите А: ");
+            A = float.Parse(Console.ReadLine());
+            Console.WriteLine("И снова, А^15 можно посчитать легче, чем требует того задание, поэтому....");
+            v1 = A * A * A;
+            v2 = v1 * v1;
+            Console.WriteLine("А^15 = " + (v2 * v2 * v1));
+            Console.ReadKey();
+
+            /**/
+        }
+    }
+}
