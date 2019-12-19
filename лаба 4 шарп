@@ -1,0 +1,176 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace лаба_4_шарп
+{
+    class Program
+    {
+        
+        static void Main(string[] args)
+        {
+
+            //Задание 1 --------------------------------------
+
+             /*
+
+             double alpha, r;
+             const double pi = 3.1415;
+             Console.WriteLine("Введите значение угла a в градусах такое, чтобы 0  < a < 360");
+             alpha = float.Parse(Console.ReadLine());
+             if (0 < alpha && alpha < 360)
+             {
+                 r = (alpha / 180) * pi;
+                 Console.WriteLine("Млацца, правильно ввел, вот твой угол в радианах: " + r + " радиан");
+             } 
+             else
+             {
+                 r = ((alpha % 360) / 180) * pi;
+                 Console.WriteLine("Мдааа... это чутка больше, чем 360, ну да лан, вот твой угол в радианах: " + r + " радиан");
+             }
+             Console.WriteLine();
+             Console.ReadKey();
+
+             /**/
+
+            //Задание 2 --------------------------------------
+
+            /*
+
+            double alpha, r;
+            const double pi = 3.1415;
+            Console.WriteLine("Введите значение угла a в радианах такое, чтобы 0  < a < 2П");
+            r = float.Parse(Console.ReadLine());
+            if (0 < r && r < 2*pi)
+            {
+                alpha = (r/pi)*180;
+                Console.WriteLine("Млацца, правильно ввели, вот ваш угол в градусах: " + alpha + " градусов");
+            }
+            else
+            {
+                alpha = ((r%(2*pi))/pi)*180;
+                Console.WriteLine("Мдааа... это чутка больше, чем 2П, ну да лан, вот ваш угол в градусах: " + alpha + " градусов");
+            }
+            Console.WriteLine();
+            Console.ReadKey();
+
+            /**/
+
+            //Задание 3 --------------------------------------
+
+            /*
+
+            float x, y, a;
+            Console.WriteLine("Введите массу конфет в кг (Х) и цену за X кг (А), а также сколько кг нужно будет купить (Y)");
+            x = float.Parse(Console.ReadLine());
+            a = float.Parse(Console.ReadLine());
+            y = float.Parse(Console.ReadLine());
+            Console.WriteLine("Ага, 1 кг конфет стоит: " + a / x);
+            Console.WriteLine("Значит, " + y + " кг конфет будет стоить " + (a/x)*y + " руб.");
+            Console.ReadKey();
+
+
+            /**/
+
+            //Задание 4 --------------------------------------
+
+            /*
+
+            float v1, v2, t, s, a;
+            Console.WriteLine("Введите скорость первого и второго автомобиля(км/ч), время Т (ч), через которое будет проведен расчет, а так же S (км) начальное расстояние между ними");
+            Console.Write("v1 = ");
+            v1 = float.Parse(Console.ReadLine());
+            Console.Write("v2 = ");
+            v2 = float.Parse(Console.ReadLine());
+            Console.Write("T  = ");
+            t =  float.Parse(Console.ReadLine());
+            Console.Write("S = ");
+            s =  float.Parse(Console.ReadLine());
+            if (v1 <= v2)
+            {
+                s = s +(v2 - v1)*t;
+            }
+            else
+            {
+                s =s + (v1 - v2) * t;
+            }
+            Console.WriteLine("Через " + t + " часов автомобили будут на " + s + " км друг о друга");
+            Console.ReadKey();
+
+            /**/
+
+            //Задание 5 --------------------------------------
+
+             /*
+
+             float A, B, x;
+             Console.WriteLine("Введите коэффиценты А и В: ");
+             A = float.Parse(Console.ReadLine());
+             B = float.Parse(Console.ReadLine());
+             if (A != 0)
+             {
+                 Console.WriteLine("Уравнение " + A + "x + " + B + " = 0");
+                 Console.WriteLine("x = " + ((-B) / A));
+             }
+             else
+             {
+                 Console.Write("Введите ненулевое значение А: ");
+                 A = float.Parse(Console.ReadLine());
+                 if (A != 0)
+                 {
+                     Console.WriteLine("Уравнение " + A + "x + " + B + " = 0");
+                     Console.WriteLine("x = " + ((-B) / A));
+                 }
+                 else
+                 {
+                     Console.WriteLine("Я не буду просить вас ввести ненулевое значение снова, ибо понял, что бесполезно...");
+                 }
+             }
+             Console.ReadKey();
+
+
+             /**/
+
+            //Задание 6 --------------------------------------
+
+            /*
+
+            
+            double A1, B1, C1, A2, B2, C2, B3, x, y, d1;
+            Console.WriteLine("Система урванений вида:");
+            Console.WriteLine("{ A1*x + B1*y = C1");
+            Console.WriteLine("{ A2·x + B2·y = C2");
+            Console.Write("Введите А1: ");
+            A1 = double.Parse(Console.ReadLine());
+            Console.Write("Введите B1: ");
+            B1 = double.Parse(Console.ReadLine());
+            Console.Write("Введите C1: ");
+            C1 = double.Parse(Console.ReadLine());
+            Console.Write("Введите А2: ");
+            A2 = double.Parse(Console.ReadLine());
+            Console.Write("Введите B2: ");
+            B2 = double.Parse(Console.ReadLine());
+            Console.Write("Введите C2: ");
+            C2 = double.Parse(Console.ReadLine());
+            Console.WriteLine("Уравнение: ");
+            Console.WriteLine("{ " + A1 + "x + " + B1 + "y = " + C1);
+            Console.WriteLine("{ " + A2 + "x + " + B2 + "y = " + C2);           
+            d1 = A1 * B2 - A2 * B1;
+            if (d1 == 0)
+            {
+                Console.WriteLine("Введите нормальные значения коэффицентов, а то не решить нормально....");
+            }
+            else
+            {
+                Console.WriteLine("x = " + (C1 * B2 - C2 * B1) / d1);
+                Console.WriteLine("y = " + (A1 * C2 - A2 * C1) / d1);               
+            }
+            Console.ReadLine();
+
+            /**/
+        }
+       
+    }
+}
