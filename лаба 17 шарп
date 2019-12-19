@@ -1,0 +1,254 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp2
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("Введите номер задания: ");
+            int z = int.Parse(Console.ReadLine());
+            if (z == 1) SemOd();
+            else if (z == 2) SemDva();
+            else if (z == 3) SemTri();
+            else if (z == 4) SemChe();
+            else if (z == 5) SemPy();
+            else Console.WriteLine("Введите число от 1 до 5!");
+            Console.ReadKey();
+        }
+        /// <summary>
+        /// ///////////////////////////////////////
+        /// </summary>
+        static void SemOd()
+        {
+            int n, i, j, m = 1, bk = 1, ck = 0, p;
+            Console.Write("Введите N: ");
+            n = int.Parse(Console.ReadLine());
+            int[] a = new int[n + 1];
+            for (i = 0; i < n; i++)
+            {
+                a[i] = int.Parse(Console.ReadLine());
+            }
+            Console.Write("Массив: ");
+            for (i = 0; i < n; i++)
+            {
+                Console.Write(a[i] + " ");
+            }
+            a[n] = int.MaxValue;
+            for (i = 0; i < n - 1; i++)
+            {
+                if (a[i] != a[i + 1])
+                {
+                    m++;
+                }
+            }           
+
+            int[] b = new int[m];
+            int[] c = new int[m];
+
+            for (i = 0; i < n; i++)
+            {
+                if (a[i] != a[i + 1])
+                {
+                    c[ck] = a[i];
+                    ck++;
+                }
+            }
+            Console.WriteLine(" ");
+            Console.Write("C:");
+            for (j = 0; j < m; j++)
+            {
+                Console.Write(c[j] + " ");
+            }
+            //nen-------------------------------------------------------
+            j = 0;
+            for (i = 1; i < n; i++)
+            {
+                if (a[i - 1] == a[i])
+                {
+                    bk++;
+                    b[j] = bk;
+                }
+                else
+                {
+                    bk = 1;
+                    j++;
+                }
+                b[j] = bk;                
+            }  
+            
+            //nen-----------------------------------------------------------
+            Console.WriteLine(" ");
+            Console.Write("B:");
+            for (j = 0; j < m; j++)
+            {
+                Console.Write(b[j] + " ");
+            }
+            Console.ReadKey();
+        }
+        ///////////////////////////////////////////////////////
+        static void SemDva()
+        {
+
+            Console.WriteLine("Введите размер массива: ");
+            int n = int.Parse(Console.ReadLine());
+            int[] a = new int[n];
+            int[] b = new int[n];
+            int[] c = new int[n];
+            int k = 1;
+            Console.Write("Введите число L:");
+            int l = int.Parse(Console.ReadLine());
+            Console.WriteLine("Введите Исходный массив:");
+            for (int i = 0; i < n; i++)
+            {
+                a[i] = int.Parse(Console.ReadLine());
+            }
+            List<int> myList = new List<int> { };
+            Console.WriteLine("Конечный массив:");
+            for (int i = 0; i < n; i++)
+            {
+                if (i <= n - l)
+                {
+                    for (int j = i; j < i + l; j++)
+                    {
+                        if (a[j] != a[i])
+                        {
+                            if (i < n)
+                            {
+                                Console.WriteLine(a[i]);
+                            }
+                            break;
+                        }
+                        if (j == (i + l - 1))
+                        {
+                            Console.WriteLine(0); ;
+                            i = i + l;
+                        }
+                    }
+                }
+                else { Console.WriteLine(a[i]); }
+            }
+        }
+        ///////////////////////////////////////////////////////
+        static void SemTri()
+        {
+            int k, n;
+            Console.Write("Введите размер массива:");
+            n = int.Parse(Console.ReadLine());
+            Console.Write("Введите k:");
+            k = int.Parse(Console.ReadLine());
+            int[] a = new int[n];
+            int[] b = new int[n];
+            int i;
+            Console.WriteLine("Введите элементы массива:");
+            for (i = 0; i < n; ++i)
+            {
+                a[i] = int.Parse(Console.ReadLine());
+            }
+
+            Console.WriteLine();
+            int nk = 1, bks = 1, lks = (k == 1 ? 1 : 0), bes = 0;
+            for (i = 1; i < n; ++i)
+            {
+                if (a[i - 1] != a[i])
+                {
+                    nk++;
+                    if (nk == k) bks = i;
+                    bes = i;
+                }
+                if (nk == k) lks++;
+            }
+            Console.WriteLine("Конечный массив:");
+            int i2 = -1;
+            for (i = 0; i < bks; ++i) b[++i2] = a[i];
+            for (i = bes; i < n; ++i) b[++i2] = a[i];
+            for (i = bks + lks; i < bes; ++i) b[++i2] = a[i];
+            for (i = bks; i < bks + lks; ++i) b[++i2] = a[i];
+            for (i = 0; i < n; ++i) a[i] = b[i];
+            for (i = 0; i < n; ++i) Console.WriteLine(a[i]);
+            Console.ReadKey();
+        }
+        ///////////////////////////////////////////////////////
+        static void SemChe()
+        {
+
+            double r, rmax = 0, x = 0, y = 0;
+
+            Console.Write("Введите размер массива:");
+            int n = int.Parse(Console.ReadLine());
+            int[,] a = new int[n, n];
+            Console.WriteLine("Введите множество точек:");
+            for (int i = 0; i < n; i++)
+            {
+                Console.Write(i + 1 + ".x :");
+                a[i, 0] = int.Parse(Console.ReadLine());
+                Console.Write(i + 1 + ".y :");
+                a[i, 1] = int.Parse(Console.ReadLine());
+            }
+            for (int i = 0; i < n; i++)
+            {
+                if ((a[i, 0] < 0) && (a[i, 1] > 0))
+                {
+
+                    r = Math.Sqrt(Math.Pow(a[i, 0], 2) + Math.Pow(a[i, 1], 2));
+                    if (r > rmax)
+                    {
+                        rmax = r;
+                        x = a[i, 0];
+                        y = a[i, 1];
+                    }
+                }
+            }
+            Console.WriteLine(x + ", " + y);
+
+            Console.ReadKey();
+        }
+        ///////////////////////////////////////////////////////
+        static void SemPy()
+        {
+
+            int i;
+            Console.WriteLine("Введите размер массива:");
+            int n = int.Parse(Console.ReadLine());
+            int[,] a = new int[n, n];
+            Console.WriteLine("Введите множество точек:");
+            for (i = 0; i < n; i++)
+            {
+                Console.Write(i + 1 + ".x :");
+                a[i, 0] = int.Parse(Console.ReadLine());
+                Console.Write(i + 1 + ".y :");
+                a[i, 1] = int.Parse(Console.ReadLine());
+            }
+            int p1 = 0, p2 = 0, p3 = 0, i2, i3;
+            double p, pmax = 0;
+            for (i = 0; i < n; ++i)
+                for (i2 = i + 1; i2 < n; ++i2)
+                    for (i3 = i2 + 1; i3 < n; ++i3)
+                    {
+                        p = 0;
+                        p += Math.Sqrt(Math.Pow(a[i, 0] - a[i2, 0], 2) + Math.Pow(a[i, 1] - a[i2, 1], 2));
+                        p += Math.Sqrt(Math.Pow(a[i, 0] - a[i3, 0], 2) + Math.Pow(a[i, 1] - a[i3, 1], 2));
+                        p += Math.Sqrt(Math.Pow(a[i2, 0] - a[i3, 0], 2) + Math.Pow(a[i2, 1] - a[i3, 1], 2));
+                        if (p > pmax)
+                        {
+                            p1 = i;
+                            p2 = i2;
+                            p3 = i3;
+                            pmax = p;
+                        }
+                    }
+
+            Console.WriteLine("Периметр:\n" + pmax);
+            Console.WriteLine("x= " + a[p1, 0] + " " + "y= " + a[p1, 1]);
+            Console.WriteLine("x= " + a[p2, 0] + " " + "y= " + a[p2, 1]);
+            Console.WriteLine("x= " + a[p3, 0] + " " + "y= " + a[p3, 1]);
+
+            Console.ReadKey();
+        }
+        ///////////////////////////////////////////////////////
+    }
+}
