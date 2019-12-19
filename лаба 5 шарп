@@ -1,0 +1,90 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace лаба_5_шарп
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //Задание 1-----------------------------------------------------------------------------------------------
+
+            /*
+            
+            int v;
+            Console.Write("Введите объем файла в байтах: ");
+            v = int.Parse(Console.ReadLine());
+            Console.Write("Объем фвйла в килобайтах: " + (v / 1024));
+            Console.ReadKey();
+
+            /**/
+
+            //Задание 2-----------------------------------------------------------------------------------------------
+
+            /*
+
+            int a, b;
+            Console.WriteLine("Введите положительные А и В такие, чтобы А > B: ");
+            a = int.Parse(Console.ReadLine());
+            b = int.Parse(Console.ReadLine());
+            if ((a / b) % 10 == 1 && a / b != 11)
+            {
+                Console.WriteLine("Внутри А помещается " + a / b + " отрезк В");
+            }
+            else if ((a / b) % 10 == 2 || (a / b) % 10 == 3 || (a / b) % 10 == 4 && a / b != 12 && a / b != 13 && a / b != 14)
+            {
+                Console.WriteLine("Внутри А помещается " + a / b + " отрезка В");
+            }
+            else
+            {
+                Console.WriteLine("Внутри А помещается " + a / b + " отрезков В");
+            }
+                Console.ReadKey();
+            
+            
+            /**/
+
+            //Задание 3-----------------------------------------------------------------------------------------------
+
+            /*
+
+            int a, b;
+            Console.WriteLine("Введите положительные А и В такие, чтобы А > B: ");
+            a = int.Parse(Console.ReadLine());
+            b = int.Parse(Console.ReadLine());
+            Console.WriteLine("Длина части отрезка А, которая не занята отрезками В: " + a%b);
+            Console.ReadKey();
+
+             /**/
+
+            //Задание 4-----------------------------------------------------------------------------------------------
+
+            /*
+
+            int ch, a;
+            Console.Write("Введи двузначное число: ");
+            ch = int.Parse(Console.ReadLine());
+            a = ch % 10; ch = ch / 10; a = a * 10;
+            Console.WriteLine("Перевернутое число: " + (a + ch));
+            Console.ReadKey();
+
+            /**/
+
+            //Задание 5-----------------------------------------------------------------------------------------------
+
+            /*
+            
+            int ch, a;
+            Console.Write("Введи трехзначное число: ");
+            ch = int.Parse(Console.ReadLine());
+            a = ch % 100; ch = ch / 100; a = a * 10;
+            Console.WriteLine("Измененное число: " + (a + ch));
+            Console.ReadKey();
+
+            /**/
+        }
+    }
+}
