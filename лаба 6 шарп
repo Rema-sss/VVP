@@ -1,0 +1,135 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace лаба_6_шарп
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //Задание 1 -----------------------------------------------
+
+            /*
+            
+            int N;
+            Console.Write("Введите N секунд: ");
+            N = int.Parse(Console.ReadLine());
+            Console.WriteLine("Секунд с последней минуты: " + N%60);
+            Console.ReadKey();
+
+            /**/
+
+            //Задание 2 -----------------------------------------------
+
+            /*
+
+            int k, l;
+            Console.Write("Введите k день: ");
+            k = int.Parse(Console.ReadLine());
+            k = k % 365;
+            l = k % 7;
+            switch (l) {
+                case 1:
+                    Console.WriteLine("1 - Понедельник, блинб");
+                    break;
+                case 2:
+                    Console.WriteLine("2 - Вторник, блинб");
+                    break;
+                case 3:
+                    Console.WriteLine("3 - Среда, блинб");
+                    break;
+                case 4:
+                    Console.WriteLine("4 - Четверг, блинб");
+                    break;
+                case 5:
+                    Console.WriteLine("5 - Пятница, блинб");
+                    break;
+                case 6:
+                    Console.WriteLine("6 - Суббота, блинб");
+                    break;
+                case 0:
+                    Console.WriteLine("7 - Воскресенье, блинб");
+                    break;
+            }
+            Console.ReadKey();
+
+            /**/
+
+            //Задание 3 -----------------------------------------------
+
+            /*
+
+            int n, k, l;
+            Console.Write("Введите k день: ");
+            k = int.Parse(Console.ReadLine());
+            Console.Write("Введите N день недели, с которого начнется год: ");
+            n = int.Parse(Console.ReadLine());
+            k = k % 365;            
+            n = n % 7;
+            l = (k % 7)+n-1;            
+            switch (l)
+            {
+                case 1:
+                    Console.WriteLine("1 - Понедельник, блинб");
+                    break;
+                case 2:
+                    Console.WriteLine("2 - Вторник, блинб");
+                    break;
+                case 3:
+                    Console.WriteLine("3 - Среда, блинб");
+                    break;
+                case 4:
+                    Console.WriteLine("4 - Четверг, блинб");
+                    break;
+                case 5:
+                    Console.WriteLine("5 - Пятница, блинб");
+                    break;
+                case 6:
+                    Console.WriteLine("6 - Суббота, блинб");
+                    break;
+                case 0:
+                    Console.WriteLine("7 - Воскресенье, блинб");
+                    break;
+            }
+            Console.ReadKey();
+
+            /**/
+
+            //Задание 4 -----------------------------------------------
+
+            /*
+
+            int A, B, C, k, o;
+            Console.Write("Введите А: ");
+            A = int.Parse(Console.ReadLine());
+            Console.Write("Введите B: ");
+            B = int.Parse(Console.ReadLine());
+            Console.Write("Введите C: ");
+            C = int.Parse(Console.ReadLine());
+            k = (A * B) / (C * C);
+            o = (A * B) - (k * (C * C));
+            Console.WriteLine("В прямоугольнике А на В помещается " + k + " квадратов с стороной С, а остается незанятым " + o + " едениц площади");
+            Console.ReadKey();
+
+            /**/
+
+            //Задание 5 -----------------------------------------------
+
+            /*
+
+            int g, v;
+            Console.Write("Введите год: ");
+            g = int.Parse(Console.ReadLine());
+            v = (g / 100);
+            if (g%100 == 0) Console.Write("Век: " + v);            
+            else Console.Write("Век: " + (v + 1));            
+            Console.ReadKey();
+
+            /**/
+
+        }
+    }
+}
