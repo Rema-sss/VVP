@@ -1,0 +1,114 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace лаба_7_шарп
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //Задание 1 -----------------------------------------------------------------------
+
+            /*
+            
+            int a, b;
+            Console.WriteLine("Введите два числа: ");
+            a = int.Parse(Console.ReadLine());
+            b = int.Parse(Console.ReadLine());
+            Console.WriteLine("Истинность высказывания: A > 2 и B <= 3: " + (a > 2 && b <= 3));
+            Console.ReadKey();
+
+            /**/
+
+            //Задание 2 -----------------------------------------------------------------------
+
+            /*
+            
+            int a, b, c;
+            Console.WriteLine("Введите три числа: ");
+            a = int.Parse(Console.ReadLine());
+            b = int.Parse(Console.ReadLine());
+            c = int.Parse(Console.ReadLine());
+            Console.WriteLine("Истинность высказывания: A < B < C: " + (a < b && b < c));
+            Console.ReadKey();
+
+            /**/
+
+            //Задание 3 -----------------------------------------------------------------------
+
+            /*
+
+            int a;
+            Console.WriteLine("Введите числo: ");
+            a = int.Parse(Console.ReadLine());
+            Console.WriteLine("Истинность высказывания: A - двузначное четное: " + (a % 2 == 0 && a < 100 && a >= 10));
+            Console.ReadKey();
+
+            /**/
+
+            //Задание 4 -----------------------------------------------------------------------
+
+            /*
+
+            int a;
+            Console.WriteLine("Введите трехзначное числo: ");
+            a = int.Parse(Console.ReadLine());
+            int q, w, e;
+            q = a / 100;
+            w = (a % 100) / 10;
+            e = a % 10;
+            Console.WriteLine("Истинность высказывания: цифры числа - последовательность возр. или убыв.: " + ((q < w && w < e) || (e < w && w < q)));
+            Console.ReadKey();
+
+            /**/
+
+            //Задание 5 -----------------------------------------------------------------------
+
+            /*
+
+            int a;
+            Console.WriteLine("Введите четырехзначное числo: ");
+            a = int.Parse(Console.ReadLine());
+            int q, w, e, r;
+            q = a / 1000;
+            w = (a % 1000) / 100;
+            e = (a % 100) / 10;
+            r = a % 10;
+            Console.WriteLine("Истинность высказывания: число - палиндром: " + (q == r && w == e));
+            Console.ReadKey();
+
+            /**/
+
+            //Задание 6 -----------------------------------------------------------------------
+
+            /*
+
+            int a, b, c;
+            Console.WriteLine("Введите три числа: ");
+            a = int.Parse(Console.ReadLine());
+            b = int.Parse(Console.ReadLine());
+            c = int.Parse(Console.ReadLine());
+            Console.WriteLine("Истинность высказывания: треугольник со сторонами a, b, c - прямоугольный: " + ((a * a + b * b == c * c) || (c * c + b * b == a * a) || (a * a + c * c  == b * b)));
+            Console.ReadKey();
+
+            /**/
+
+            //Задание 7 -----------------------------------------------------------------------
+
+            /*
+
+            int a, b, c;
+            Console.WriteLine("Введите три числа: ");
+            a = int.Parse(Console.ReadLine());
+            b = int.Parse(Console.ReadLine());
+            c = int.Parse(Console.ReadLine());
+            Console.WriteLine("Истинность высказывания: треугольник со сторонами a, b, c существует: " + ((a + b > c) && (a + c > b) && (c + b > a)));
+            Console.ReadKey();
+
+            /**/
+        }
+    }
+}
