@@ -1,0 +1,113 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace лаба_20_шарп
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("Введите номер задания: ");
+            int z = int.Parse(Console.ReadLine());
+            if (z == 1) Dva0Od();
+            else if (z == 2) Dva0Dva();
+            else if (z == 3) Dva0Tri();
+            else if (z == 4) Dva0Che();
+            else if (z == 5) Dva0Py();
+            else Console.WriteLine("Введите число от 1 до 5!");
+            Console.ReadKey();
+        }
+        /// <summary>
+        /// ///////////////////////////////////////
+        /// </summary>
+        static void Dva0Od()
+        {
+            char c;
+            int b, a, h;
+            Console.WriteLine("\nВведите символ:\n");
+            c = Convert.ToChar(Console.ReadLine());
+            b = Convert.ToInt32(c);
+            a = b - 1;
+            h = b + 1;
+            Console.WriteLine(Convert.ToChar(a) + " " + Convert.ToChar(h));
+        }
+        static void Dva0Dva()
+        {
+            List<char> myList = new List<char> { };
+            string a;
+            char h;
+            Console.WriteLine("Введите строку: ");
+            a = Console.ReadLine();
+            for (int i = 0; i < a.Length; i++)
+            {
+                h = Convert.ToChar(a[i]);
+                myList.Add(h);
+                myList.Add(' ');
+
+            }
+            for (int i = 0; i < a.Length * 2; i++)
+            {
+                Console.Write(myList[i]);
+
+            }
+        }
+        static void Dva0Tri()
+        {
+            string a;
+            int h, k = 0;
+            Console.WriteLine("Введите строку: ");
+            a = Console.ReadLine();
+            for (int i = 0; i < a.Length; i++)
+            {
+                h = Convert.ToInt32(a[i]);
+                if (h > 64 && h < 91)
+                {
+                    k++;
+                }
+
+            }
+            Console.WriteLine("Колво прописных букв: " + k);
+        }
+        static void Dva0Che()
+        {
+            List<char> myList = new List<char> { };
+            string a;
+            char h;
+            char c;
+            int s = 0;
+            Console.WriteLine("Введите символ С: ");
+            c = Convert.ToChar(Console.ReadLine());
+            Console.WriteLine("Введите строку: ");
+            a = Console.ReadLine();
+            for (int i = 0; i < a.Length; i++)
+            {
+                h = Convert.ToChar(a[i]);
+                if (h == c)
+                {
+                    myList.Add(h);
+                    myList.Add(h);
+                    s++;
+                }
+                else { myList.Add(h); }
+            }
+            for (int i = 0; i < a.Length + s; i++)
+            {
+                Console.Write(myList[i]);
+            }
+        }
+        static void Dva0Py()
+        {
+            string s, s0;
+            Console.WriteLine("Введите строку S: ");
+            s = Console.ReadLine();
+            Console.WriteLine("Введите строку S0: ");
+            s0 = Console.ReadLine();
+            int k = s.Length;
+            s = s.Replace(s0, "");
+            Console.WriteLine((k - s.Length) / s0.Length);
+        }
+    }
+}
